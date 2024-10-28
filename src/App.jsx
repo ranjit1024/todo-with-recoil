@@ -18,6 +18,7 @@ function App() {
       <div>
         <RecoilRoot>
           <TodoComponent></TodoComponent>
+          <FilterTodo></FilterTodo>
           <ListTodo></ListTodo>
         </RecoilRoot>
       </div>
@@ -46,6 +47,18 @@ function TodoComponent() {
       <button onClick={setValues}>Submit</button>
     </div>
   );
+}
+function FilterTodo(){
+  const Todo = useRecoilValue(todo);
+
+  return <div className="filtertodo">
+    <input type="text" placeholder="Search" onChange={
+      e =>{
+        const filerArray = Todo.filter(title => title.title == e.target.value)
+        console.log(filerArray) 
+      }
+    }/>
+  </div>
 }
 
 function ListTodo(){

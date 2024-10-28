@@ -68,3 +68,12 @@ ul li {
 .title{
     display: block;
 }
+
+.filtertodo{
+    text-align: center;
+    font-weight: 600;
+}
+
+.filtertodo input{
+    font-weight: 500;
+}
