@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+*{
+    font-family: "Montserrat";
+}
+main{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+input{
+   margin: auto;
+   width: 400px;
+   height: 25px;
+   padding: 5px;
+   border-radius: 5px;
+   border:1px solid black;
+   margin: 10px;
+   &:focus{
+    outline: none;
+   }
+}
+
+
+button{
+    margin: 10px;
+    text-align: center;
+    
+}
+.container{
+    text-align: center;
+
+}
+
+.showTodo{
+    font-weight: 500;
+}
+
+button{
+    width: 100px;
+    height: 30px;
+    font-weight: 500;
+}
+.todo{
+    text-align: center;
+}
+
+ul{
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+ul li {
+    padding: 30px;
+    background-color: whitesmoke;
+    margin: 5px;
+    min-width: 250px;
+    font-size: 17px;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    border-radius: 10px;
+}
+
+.title{
+    display: block;
+}
