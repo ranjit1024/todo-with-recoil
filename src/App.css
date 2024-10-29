@@ -65,15 +65,16 @@ ul li {
     border-radius: 10px;
 }
 
+ul li::after{
+    content: " ";
+    height: 10px;
+    width: 100%;
+    background-color: rebeccapurple;
+}
 .title{
     display: block;
 }
 
-.filtertodo{
+.filter{
     text-align: center;
-    font-weight: 600;
-}
-
-.filtertodo input{
-    font-weight: 500;
 }

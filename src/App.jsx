@@ -8,7 +8,7 @@ import {
   useRecoilValue,
   useSetRecoilState,
 } from "recoil";
-import { todo } from "./states/ToodState";
+import { todo, FilterTodo, searchValue} from "./states/ToodState";
 
 
 let nextid = 0;
@@ -18,7 +18,8 @@ function App() {
       <div>
         <RecoilRoot>
           <TodoComponent></TodoComponent>
-          <FilterTodo></FilterTodo>
+          <FilterTodoInput></FilterTodoInput>
+          <RenderFilterTodo></RenderFilterTodo>
           <ListTodo></ListTodo>
         </RecoilRoot>
       </div>
@@ -48,29 +49,39 @@ function TodoComponent() {
     </div>
   );
 }
-function FilterTodo(){
-  const Todo = useRecoilValue(todo);
 
-  return <div className="filtertodo">
-    <input type="text" placeholder="Search" onChange={
-      e =>{
-        const filerArray = Todo.filter(title => title.title == e.target.value)
-        console.log(filerArray) 
-      }
-    }/>
-  </div>
+function FilterTodoInput(){
+  const [serch, setSearchValue] = useRecoilState(searchValue);
+    return <div className=" filter">
+      <input type="text" name="" id="" placeholder="Search" onChange={
+        e => {
+          setSearchValue(e.target.value)
+        }
+      }/>
+     
+    </div>
 }
 
-function ListTodo(){
-  const Todo = useRecoilValue(todo)
+function ListTodo({Todo}){
+  
+}
+
+function RenderFilterTodo(){
+  const filterValue = useRecoilValue(searchValue);
+
+  const filterTodo = useRecoilValue(FilterTodo);
   
   return <ul>
     {
-      Todo.map(todo => (
-        
+      filterTodo.map(todo => (
         <li key={nextid++}><span className="title">Title: {todo.title}</span> <span className="des">Descripition: {todo.des}</span></li>
       ))
+      
     }
+    
   </ul>
+
 }
+
+
 export default App;
